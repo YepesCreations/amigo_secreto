@@ -1,162 +1,136 @@
-:root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
-}
-
 /* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    height: 100vh;
-    background-color: var(--color-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: "Inter", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #4b69fd;
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff9eb;
 }
 
-/* Banner */
 .header-banner {
-    flex: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 0;
+  text-align: center;
 }
 
-/* Sección de entrada */
+.header-banner img {
+  max-width: 100%;
+  height: auto;
+}
+
 .input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Títulos */
-.main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
-}
-
-.section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
-}
-
-/* Contenedores de entrada y botón */
 .input-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 500px;
 }
 
 .input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
+  flex: 1;
+  min-width: 150px;
+  padding: 10px;
+  font-size: 1rem;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-name:focus {
+  border-color: #007bff;
+}
+
+.button-add,
+.button-draw,
+.button-reset {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.button-draw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-add:hover,
+.button-draw:hover,
+.button-reset:hover {
+  background-color: #0056b3;
+}
+
+.name-list {
+  margin-top: 20px;
+  padding-left: 0;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 30px;
+}
+
+.nombres {
+  font-size: 24px;
+  display: inline-block;
+  animation: float 1.5s ease-in-out infinite;
+  color: #4b69fd;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .button-container {
-    width: 300px;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+/* Responsividad */
+@media (max-width: 768px) {
+  .input-wrapper {
+    flex-direction: column;
+  }
 
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
-}
-
-.button-add:hover {
-    background-color: #a1a1a1;
-}
-
-/* Listas */
-ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
-}
-
-.result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Botón de sortear título */
-.button-draw {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
-}
-
-.button-draw img {
-    margin-right: 40px;
-}
-
-.button-draw:hover {
-    background-color: var(--color-button-hover);
+  .button-container {
+    flex-direction: column;
+  }
 }
