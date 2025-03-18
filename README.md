@@ -1,4 +1,4 @@
-# Proyecto de Lista de Nombres
+# Amigo Secreto
 
 Este proyecto permite a los usuarios agregar nombres a una lista interactiva y realizar un sorteo de selcción aleatoria de los nombres ingresados.
 
